@@ -1,0 +1,91 @@
+/* Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup Container */
+.register-popup {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    height: 80%; /* Restrict height */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensures proper scroll behavior */
+}
+
+/* Scrollable Form Container */
+.form-container {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 1rem; /* Space for scrollbar */
+}
+
+/* Form Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 1rem; /* Spacing between fields */
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.form-group input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Buttons */
+.form-buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.register-button,
+.close-button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #004aad;
+    align-items: center;
+}
+
+.close-button {
+    background-color: #f44336;
+}
+
+.register-button:hover {
+    background-color: #003580;
+}
+
+.close-button:hover {
+    background-color: #d32f2f;
+}

@@ -1,0 +1,141 @@
+/* General Container Styling */
+.task-review-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+
+/* Individual Review Card Styling */
+.review-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  overflow: hidden;
+  flex: 1 1 calc(30% - 1rem); /* Responsive layout for 3 cards per row */
+  min-width: 250px;
+  max-width: 350px;
+}
+
+.review-card h3 {
+  color: #004aad;
+  margin: 0 0 0.5rem;
+}
+
+.review-card p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Expanded Card Styling */
+.review-card.expanded {
+  background-color: #e6f7ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2; /* Bring expanded card to the front */
+  transform: scale(1.05); /* Slight zoom effect on expansion */
+}
+
+.review-card .expanded-details {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  max-height: 400px; /* Limit the height */
+  overflow-y: auto; /* Scroll for long content */
+  transition: max-height 0.4s ease, padding-top 0.4s ease;
+}
+
+/* Expanded View Details Styling */
+.review-card .expanded-details p {
+  color: #333;
+  margin: 5px 0;
+}
+
+.review-card .expanded-details strong {
+  font-weight: bold;
+  color: #004aad;
+}
+
+/* Popup Overlay Styling (Optional: For showing full details in a modal) */
+/* Overlay Styling */
+.popup-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000; /* Ensure overlay appears above other content */
+animation: fadeIn 0.4s ease;
+}
+
+/* Popup Card */
+.popup-card {
+background-color: #ffffff;
+border-radius: 8px;
+padding: 2rem;
+width: 400px;
+max-width: 90%; /* Responsive design */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+animation: slideDown 0.4s ease;
+}
+
+.popup-card h3 {
+margin-bottom: 1rem;
+color: #004aad;
+}
+
+/* Button Group Styling */
+.button-group {
+display: flex;
+justify-content: flex-end;
+gap: 1rem;
+margin-top: 1rem;
+}
+
+.cancel-button {
+background-color: #dc3545;
+color: white;
+border: none;
+padding: 0.5rem 1rem;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.cancel-button:hover {
+background-color: #c82333;
+}
+
+/* Smooth Animations */
+@keyframes fadeIn {
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+}
+
+@keyframes slideDown {
+from {
+  transform: translateY(-20px);
+}
+to {
+  transform: translateY(0);
+}
+}
+
+

@@ -1,0 +1,185 @@
+/* General Layout */
+.vehicles-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header Styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #004aad;
+    color: white;
+  }
+  
+  .header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .header .profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header .profile span {
+    margin-left: 10px;
+  }
+  
+  .header .logout-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .header .logout-button:hover {
+    background-color: #c9302c;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    background-color: #98baf0;
+    width: 200px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .sidebar .menu-item {
+    cursor: pointer;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #004aad;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar .menu-item:hover {
+    background-color: #e1e9ff;
+    color: #003080;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fdfdfb;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .main-content h1 {
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .vehicle-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .vehicle-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .vehicle-form input,
+  .vehicle-form select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .vehicle-form button {
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  
+  .vehicle-form button:hover {
+    background-color: #003080;
+  }
+  
+  /* Vehicle List */
+  .vehicle-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .vehicle-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .vehicle-card span {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .vehicle-card .action-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .vehicle-card .action-buttons button {
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .vehicle-card .action-buttons button:hover {
+    background-color: #003080;
+  }
+  
+  .vehicle-card .action-buttons .delete-button {
+    background-color: #d9534f;
+  }
+  
+  .vehicle-card .action-buttons .delete-button:hover {
+    background-color: #c9302c;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #004aad;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  

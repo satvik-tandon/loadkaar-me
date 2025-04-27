@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5001:5001"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=database
+      - DB_USER=root
+      - DB_PASSWORD=example
+      - DB_NAME=loadkaar
+    depends_on:
+      - database
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    stdin_open: true
+
+  database:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: loadkaar
+    ports:
+      - "3306:3306"

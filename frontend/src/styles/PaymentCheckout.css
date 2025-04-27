@@ -1,0 +1,138 @@
+/* General Styling for Payment Checkout Page */
+.payment-checkout {
+    max-width: 100%;
+    margin: 50px auto; /* Center the form on the page */
+    padding: 30px;
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: Arial, sans-serif;
+    color: #333; /* Text color */
+}
+
+.payment-checkout h2 {
+    text-align: center;
+    color: #004aad; /* Theme primary color */
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Grid Layout for Form */
+.payment-checkout form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px; /* Space between grid items */
+    align-items: center; /* Center align items in grid */
+    justify-items: center; /* Center align grid items horizontally */
+}
+
+/* Form Item Styling */
+.payment-checkout label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #555; /* Subtle text color for labels */
+    width: 100%; /* Ensure labels take full width within the grid cell */
+}
+
+.payment-checkout input,
+.payment-checkout select {
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid #ddd; /* Light border for inputs */
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%; /* Ensure inputs expand fully */
+}
+
+/* Centered Amount Paid Field */
+.amount-paid {
+    grid-column: 2 / span 1; /* Center in the middle column */
+    text-align: center;
+    width: 100%; /* Ensure it aligns well */
+}
+
+.amount-paid input {
+    text-align: center; /* Align input text */
+    font-size: 18px; /* Slightly larger font for emphasis */
+    font-weight: bold;
+}
+
+/* Pay Now Button Styling */
+.pay-now {
+    background-color: #ccc;
+    color: #333;
+    margin: 20px auto 0; /* Center horizontally with 'auto' */
+    padding: 10px 20px; /* Add some padding for better appearance */
+    display: block; /* Ensure the button is treated as a block-level element */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center; /* Center-align text */
+}
+
+.pay-now:hover {
+    background-color: #00337a; /* Darker shade on hover */
+}
+
+/* Input Focus Effects */
+.payment-checkout input:focus,
+.payment-checkout select:focus {
+    border-color: #004aad; /* Highlight on focus */
+    box-shadow: 0 0 5px rgba(0, 74, 173, 0.5);
+    outline: none;
+}
+
+/* Readonly Inputs */
+.readonly {
+    background-color: #d5d0d0;
+}
+
+/* Payment Response Section */
+.payment-response {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd; /* Border for response container */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light background for distinction */
+    grid-column: 1 / span 3; /* Span across all columns */
+}
+
+.payment-response p {
+    margin: 10px 0;
+    color: #333; /* Standard text color */
+    font-size: 14px;
+}
+
+/* Success Message Styling */
+.payment-checkout h2.success {
+    color: #28a745; /* Green for success */
+}
+
+/* Failure Message Styling */
+.payment-checkout h2.failure {
+    color: #dc3545; /* Red for failure */
+}
+
+/* Back Button Styling */
+.payment-checkout button {
+    grid-column: 2 / span 1;
+    background-color: #004aad;
+    color: white;
+    margin: 20px auto 0; /* Center horizontally with 'auto' */
+    padding: 10px 20px; /* Add some padding for better appearance */
+    display: block; /* Ensure the button is treated as a block-level element */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center; /* Center-align text */
+}
+
+.payment-checkout button:hover {
+    background-color: #0056b3;
+}

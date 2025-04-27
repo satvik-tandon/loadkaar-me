@@ -1,0 +1,123 @@
+/* Profile Settings Container */
+.profile-settings-container {
+    font-family: Arial, sans-serif;
+    background-color: #eef4ff;
+    padding: 2rem;
+    margin: 2rem auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #004aad;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #eef4ff;
+    border-bottom: 2px solid #004aad;
+  }
+  
+  .logo {
+    width: 60px; /* Adjust logo size */
+    height: auto;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Page Title */
+  .page-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #004aad;
+  }
+  
+  /* Profile Form */
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Profile Picture Section */
+  .profile-picture-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #004aad;
+  }
+  
+  .upload-label {
+    font-size: 0.9rem;
+    color: #004aad;
+    cursor: pointer;
+  }
+  
+  .upload-input {
+    display: none;
+  }
+  
+  /* Form Groups */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #004aad;
+  }
+  
+  .form-group input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .read-only-input {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 0.7rem;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #00317d;
+  }
+  
+  /* Delete Account Button */
+  .delete-button {
+    background-color: red;
+    margin-top: 1rem;
+  }
+  
+  .delete-button:hover {
+    background-color: darkred;
+  }
+  

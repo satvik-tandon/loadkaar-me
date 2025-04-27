@@ -1,0 +1,221 @@
+/* Main container for both left and right panes */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  flex-wrap: wrap; /* Allow the layout to wrap on smaller screens */
+}
+
+/* Left pane containing the cards */
+.left-pane {
+  width: 100%; /* Full width on mobile */
+  max-width: 350px; /* Limit the width of the card container */
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+/* Right pane containing the map */
+.right-pane {
+  width: 100%; /* Full width on mobile */
+  max-width: 700px; /* Limit the width of the map */
+  flex: 2;
+  height: 500px; /* Fix height for map */
+}
+
+/* Delivery partners container */
+.delivery-partners-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background-color: #fdfdfb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Card styling for each driver */
+.card {
+  background-color: #fdfdfb;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Added transition for color change */
+  border: 1px solid #004aad;
+  flex: 1;
+  color: #333; /* Default text color */
+}
+
+/* Hover effect for card */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  background-color: #004aad; /* Background color changes on hover */
+  color: white; /* Change text color to white on hover */
+}
+
+/* Card heading */
+.card h3 {
+  font-size: 1.5rem;
+  color: #004aad;
+  font-weight: bold;
+  margin-bottom: 8px;
+  transition: color 0.3s ease; /* Transition for heading color */
+}
+
+/* Card heading on hover */
+.card:hover h3 {
+  color: white; /* Change heading color to white when card is hovered */
+}
+
+/* Card paragraph text */
+.card p {
+  font-size: 1rem;
+  color: #333;
+  margin: 8px 0;
+  transition: color 0.3s ease; /* Transition for paragraph text color */
+}
+
+/* Paragraph text on hover */
+.card:hover p {
+  color: white; /* Change paragraph text color to white when card is hovered */
+}
+
+
+/* Map container style */
+.map-container {
+  width: 100%;
+  height: 100%;
+  max-width: 700px;
+  border-radius: 8px;
+}
+
+/* Active drivers section for debugging */
+.active-drivers {
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+pre {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack columns on smaller screens */
+    gap: 20px;
+  }
+
+  .left-pane, .right-pane {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 20px;
+  }
+
+  .map-container {
+    height: 300px; /* Reduce map height on mobile */
+  }
+
+  .card {
+    width: 100%; /* Cards should take up full width on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 12px; /* Adjust padding on small screens */
+  }
+
+  .card h3 {
+    font-size: 1.2rem; /* Make heading smaller */
+  }
+
+  .card p {
+    font-size: 0.9rem; /* Reduce font size on small screens */
+  }
+
+  .map-container {
+    height: 250px; /* Further reduce map height on very small screens */
+  }
+}
+
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Popup content */
+.popup-content {
+  width: 400px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.popup-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+  color: #333;
+  text-align: center;
+}
+
+.popup-content p {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #666;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Button styles */
+.popup-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.popup-buttons button:hover {
+  opacity: 0.9;
+}
+
+.popup-buttons button:first-child {
+  background-color: red;
+  color: white;
+}
+
+.popup-buttons button:last-child {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.popup-buttons button:last-child:hover {
+  background-color: #0056b3;
+}

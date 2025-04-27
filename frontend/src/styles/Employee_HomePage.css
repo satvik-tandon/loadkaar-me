@@ -1,0 +1,233 @@
+/* Page-Specific Styling */
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #fdfdfb;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #004aad;
+    color: white;
+}
+
+.header .logo {
+    width: 60px;
+}
+.logo {
+    width: 60px; /* Adjust logo size */
+    height: auto;
+}
+/* Logo Section (Aligned to the Left) */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.status {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    background-color: #004aad;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+}
+
+
+.header .profile {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ff8a3d; /* Matches the profile icon color */
+    margin-right: 0.5rem;
+}
+
+
+/* Sidebar */
+.sidebar {
+    background-color: #98baf0;
+    width: 250px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-right: 2px solid #004aad;
+}
+
+.sidebar .menu-item {
+    background-color: #fdfdfb;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    color: #004aad;
+    border: 1px solid #004aad;
+    transition: 0.3s;
+}
+
+.sidebar .menu-item:hover {
+    background-color: #004aad;
+    color: white;
+}
+
+.menu-item.active {
+    background-color: #004aad; /* Active background color */
+    color: white; /* Active text color */
+    border-left: 5px solid #f7f8fa; /* Highlight active item */
+  }
+
+.sidebar .rating {
+    text-align: center;
+    margin-top: auto;
+}
+
+.sidebar .rating h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.sidebar .stars {
+    color: #fcd34d;
+    font-size: 1.5rem;
+}
+
+/* Profile & Status Section (Aligned to the Right) */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between status and profile */
+}
+
+
+/* Website Name (Centered) */
+.website-name {
+    flex: 1; /* Ensures it takes the center space */
+    text-align: center;
+    font-size: 1.8rem; /* Adjust font size */
+    font-weight: bold;
+    color: #ebeff7; /* Matches your theme */
+    margin: 0; /* Removes default margin */
+}
+
+.logout-button {
+    background-color: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 16px;
+  }
+  
+  .logout-button:hover {
+    background-color: #d63e4b;
+  }
+
+  
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.main-content h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #004aad;
+    color: white;
+    padding: 1rem;
+    border-top: 2px solid #eef4ff;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between buttons */
+    margin-top: 1.5rem;
+}
+
+/* Theme Button */
+.theme-button {
+    background-color: #004aad; /* Matches header and sidebar theme */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.theme-button:hover {
+    background-color: #00338c; /* Darker blue for hover */
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+.theme-button:active {
+    background-color: #002366; /* Even darker blue for active state */
+    transform: translateY(0); /* Reset lift */
+}
+
+.notification-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Adjust spacing from logo */
+  }
+
+  .notification-button {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px; /* Adjust icon size */
+  }
+
+  .notification-icon {
+    font-size: 24px; /* Adjust icon size */
+    color: #555;
+  }
+
+  .notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
