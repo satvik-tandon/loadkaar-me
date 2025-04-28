@@ -30,7 +30,7 @@ const VehiclesPage = ({ updateToggleStatus }) => {
   const fetchVehicles = async (updateToggle = true) => {
     try {
       const vehicleDetails = { user_id: userID };
-      const response = await axios.post("http://localhost:5001/api/vehicles/user", vehicleDetails);
+      const response = await axios.post("/api/vehicles/user", vehicleDetails);
       if (response.data.message === "No vehicles found for this user") {
         setVehicles([]);
         if (updateToggle)
@@ -70,7 +70,7 @@ const VehiclesPage = ({ updateToggleStatus }) => {
     try {
       const vehicleData = { ...newVehicle, user_id: userID };
 
-      await axios.post("http://localhost:5001/api/addVehicle", vehicleData);
+      await axios.post("/api/addVehicle", vehicleData);
       alert("Vehicle added successfully");
       fetchVehicles();
       // Clear the input fields by resetting newVehicle
@@ -90,7 +90,7 @@ const VehiclesPage = ({ updateToggleStatus }) => {
   const handleRemoveVehicle = async (vehicle_id) => {
     try {
       const vehicleId = { vehicle_id: vehicle_id };
-      await axios.post("http://localhost:5001/api/vehicles/remove", vehicleId);
+      await axios.post("/api/vehicles/remove", vehicleId);
       fetchVehicles();
       alert("Vehicle removed successfully");
     } catch (error) {
@@ -107,7 +107,7 @@ const VehiclesPage = ({ updateToggleStatus }) => {
     }
     try {
       const vehicleStatus = { vehicle_id: vehicle_id, status: status };
-      await axios.put("http://localhost:5001/api/vehicles/update-status", vehicleStatus);
+      await axios.put("/api/vehicles/update-status", vehicleStatus);
       fetchVehicles();
       alert("Vehicle status updated successfully");
     } catch (error) {

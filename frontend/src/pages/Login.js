@@ -24,7 +24,7 @@ function Login({ role, onClose }) {
         if (userData.email && userData.password) {
             try {
                 console.log(userData);
-                await axios.post("http://localhost:5001/api/login", userData)
+                await axios.post("/api/login", userData)
                 .then((response) => {
                     const userID = response.data.userID;
 

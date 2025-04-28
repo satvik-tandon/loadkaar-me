@@ -203,7 +203,7 @@ function BookDeliveryPartner({ onClose, onFindDeliveryPartner }) {
             );
         });
     };
-    
+
     useEffect(() => {
         if (distance && duration) {
             dispatch(setDeliveryFormData({ ...formData, distance, duration }));
@@ -229,7 +229,7 @@ function BookDeliveryPartner({ onClose, onFindDeliveryPartner }) {
             console.error("Error while calculating distance:", error);
         }
     };
-    
+
 
     return (
         <div className="popup-overlay">

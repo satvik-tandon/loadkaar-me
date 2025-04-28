@@ -66,7 +66,7 @@ const FindDeliveryPartnerUsingMap = () => {
       try {
         setIsLoading(true);
         const response = await axios.post(
-          "http://localhost:5001/api/find-drivers",
+          "/api/find-drivers",
           { sourceLocation, vehicleType: updatedVehicleType }
         );
         const data = response.data.results;
@@ -175,7 +175,7 @@ const FindDeliveryPartnerUsingMap = () => {
   const fetchRating = async (user_id) => {
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/get-rating",
+        "/api/get-rating",
         { user_id: user_id }
       );
       if (response.status === 200) {

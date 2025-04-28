@@ -26,7 +26,7 @@ const ProfileSettings = () => {
     const profileDetails = {user_id: userID};
     console.log("The profile user's id is:", profileDetails);
     try {
-      const response = await axios.post("http://localhost:5001/api/user", profileDetails);
+      const response = await axios.post("/api/user", profileDetails);
       console.log(response.data);
       setProfileData(response.data);
       setInitialData(response.data);  // Store initial data for comparison
@@ -62,7 +62,7 @@ const ProfileSettings = () => {
     try {
       const data = {...profileData, user_id: userID};
       console.log("The data before updating is:", data);
-      await axios.put("http://localhost:5001/api/updateProfile", data);
+      await axios.put("/api/updateProfile", data);
       alert("Profile updated successfully!");
     } catch (error) {
       console.error("Error updating profile:", error);

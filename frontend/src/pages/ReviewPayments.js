@@ -16,13 +16,13 @@ const ReviewPayments = ({ type }) => {
     const fetchPayments = async () => {
       try {
         setLoading(true);
-        const response = await axios.post("http://localhost:5001/api/get-payment-details", { user_id: userID,type });
+        const response = await axios.post("/api/get-payment-details", { user_id: userID,type });
         setPayments(response.data);
 
         // Fetch task IDs for each payment in a batch call
         const paymentIds = response.data.map(payment => payment.payment_id);
         if (paymentIds.length > 0) {
-          const taskResponse = await axios.post("http://localhost:5001/api/get-taskbypayment", { payment_ids: paymentIds });
+          const taskResponse = await axios.post("/api/get-taskbypayment", { payment_ids: paymentIds });
           setTasks(taskResponse.data.tasks); // Assuming the response contains { tasks: { payment_id: task_id }
         }
 

@@ -32,7 +32,7 @@ const ReviewForm = ({ taskId, revieweeId }) => {
             console.log(reviewData);
 
             // API call to backend
-            axios.post("http://localhost:5001/api/insert-review", { reviewData } )
+            axios.post("/api/insert-review", { reviewData } )
             .then((response) => {
                 console.log(response);
             })

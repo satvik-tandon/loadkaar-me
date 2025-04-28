@@ -34,7 +34,7 @@ const PaymentCheckout = () => {
     useEffect(() => {
         const fetchDetails = async () => {
             try {
-                const response = await axios.post("http://localhost:5001/api/get-username", { userID });
+                const response = await axios.post("/api/get-username", { userID });
 
                 // Set user details
                 setUserDetails({
@@ -91,7 +91,7 @@ const PaymentCheckout = () => {
                 fromVehicleStatus: "Active",
                 toVehicleStatus: "In Use"
             };
-            const response = await axios.post("http://localhost:5001/api/users/update-employee-status", userStatus);
+            const response = await axios.post("/api/users/update-employee-status", userStatus);
 
             if (response.status === 200) {
                 console.log("User status updated successfully:", response.data);
@@ -109,7 +109,7 @@ const PaymentCheckout = () => {
 
                 updateUserStatus(paymentData.employee_id);
 
-                axios.post("http://localhost:5001/api/save-payment-details", {
+                axios.post("/api/save-payment-details", {
                     paymentResponse: paymentResponse,
                     paymentData: paymentData,
                     status: transactionStatus
@@ -117,13 +117,13 @@ const PaymentCheckout = () => {
                 })
                     .then(response => {
 
-                        axios.post("http://localhost:5001/api/save-tasks", {
+                        axios.post("/api/save-tasks", {
                             paymentResponse: paymentResponse,
                             paymentData: paymentData
                         })
                             .then(response => {
                                 const task_id = response.data.taskID;
-                                axios.post("http://localhost:5001/api/save-task-details", {
+                                axios.post("/api/save-task-details", {
                                     task_id: task_id,
                                     deliveryFormData: deliveryFormData
                                 })

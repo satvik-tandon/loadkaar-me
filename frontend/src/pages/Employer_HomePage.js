@@ -34,7 +34,7 @@ function Employer_HomePage() {
         const checkRole = role === "Employer" ? "Employee" : "Employer";
         const checkStatus = currentView === "pastOrders" ? "completed" : "inprogress";
   
-        const response = await axios.post("http://localhost:5001/api/get-tasks", {
+        const response = await axios.post("/api/get-tasks", {
           userID,
           role: checkRole,
           taskStatus: checkStatus,
@@ -50,7 +50,7 @@ function Employer_HomePage() {
 
     const fetchRating = async () => {
       try {
-        const response = await axios.post("http://localhost:5001/api/get-rating", { user_id: userID });
+        const response = await axios.post("/api/get-rating", { user_id: userID });
         console.log(response);
         if (response.status === 200) {
           setRating(parseFloat(response.data.averageRating)); // Set the rating from the response

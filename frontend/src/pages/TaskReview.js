@@ -23,9 +23,9 @@ const TaskReview = ({ type }) => {
       }
 
       if (type === "Tasks Review") {
-        response = await axios.post("http://localhost:5001/api/get-reviewbyreviewer", { user_id: userID ,role  });
+        response = await axios.post("/api/get-reviewbyreviewer", { user_id: userID ,role  });
       } else if (type === "Received Review") {
-        response = await axios.post("http://localhost:5001/api/get-reviewbyreviewee", { user_id: userID, role });
+        response = await axios.post("/api/get-reviewbyreviewee", { user_id: userID, role });
       } else {
         setError("Invalid type for reviews.");
         setLoading(false);

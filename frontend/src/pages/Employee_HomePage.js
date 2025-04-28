@@ -40,7 +40,7 @@ function Employee_HomePage() {
   const fetchUserStatus = async () => {
     try {
       const userData = { user_id: userID };
-      const responseMessage = await axios.post("http://localhost:5001/api/isactive", userData);
+      const responseMessage = await axios.post("/api/isactive", userData);
 
       if (responseMessage.data.message === "The User is active") {
         setIsActive(true);
@@ -59,7 +59,7 @@ function Employee_HomePage() {
   const fetchVehicleStatus = async () => {
     try {
       const vehicleDetails = { user_id: userID };
-      const response = await axios.post("http://localhost:5001/api/vehicles/status", vehicleDetails);
+      const response = await axios.post("/api/vehicles/status", vehicleDetails);
       if (response.data.message === "User has at least one active vehicle.") {
         setVehiclesActive(true);
         setIsActive(true);
@@ -91,7 +91,7 @@ function Employee_HomePage() {
         const checkRole = role === "Employer" ? "Employee" : "Employer";
         const checkStatus = currentView === "pastTasks" ? "completed" : "inprogress";
 
-        const response = await axios.post("http://localhost:5001/api/employee-tasks", {
+        const response = await axios.post("/api/employee-tasks", {
           userID,
           role: checkRole,
           taskStatus: checkStatus,
@@ -102,7 +102,7 @@ function Employee_HomePage() {
         setCurrentOrders(tasks.length > 0); // Boolean flag to check if there are orders
 
 
-        const resCheckStatus = await axios.post("http://localhost:5001/api/employee-tasks", {
+        const resCheckStatus = await axios.post("/api/employee-tasks", {
           userID,
           role: checkRole,
           taskStatus: "inprogress",
@@ -118,7 +118,7 @@ function Employee_HomePage() {
 
     const fetchRating = async () => {
       try {
-        const response = await axios.post("http://localhost:5001/api/get-rating", { user_id: userID });
+        const response = await axios.post("/api/get-rating", { user_id: userID });
         console.log(response);
         if (response.status === 200) {
           setRating(parseFloat(response.data.averageRating)); // Set the rating from the response
@@ -171,7 +171,7 @@ function Employee_HomePage() {
         user_id: userID,
         status: newStatus ? "Active" : "Inactive", // Set status based on new isActive value
       };
-      const response = await axios.post("http://localhost:5001/api/users/updateStatus", userStatus);
+      const response = await axios.post("/api/users/updateStatus", userStatus);
 
       if (response.status === 200) {
         console.log("User status updated successfully:", response.data);
@@ -196,9 +196,9 @@ function Employee_HomePage() {
       // const userVal = { user_id: userID };
       console.log(userID);
 
-      const responseMessage = await axios.post("http://localhost:5001/api/isactive", { user_id: userID });
+      const responseMessage = await axios.post("/api/isactive", { user_id: userID });
       if (responseMessage.data.message === "The User is active") {
-        const response = await axios.post("http://localhost:5001/api/location", payload);
+        const response = await axios.post("/api/location", payload);
 
         if (response.status === 200) {
           console.log("Location stored successfully:", response.data);

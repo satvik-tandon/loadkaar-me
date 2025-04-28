@@ -27,15 +27,15 @@ function Warehouse_HomePage() {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const response = await axios.post("http://localhost:5001/api/employer-get-tasks", { userID });
+        const response = await axios.post("/api/employer-get-tasks", { userID });
         const tasks = response.data.results;
 
         // Enrich tasks with additional details
         const enrichedOrders = await Promise.all(
           tasks.map(async (task) => {
             const [taskDetails, paymentDetails] = await Promise.all([
-              axios.post("http://localhost:5001/api/employer-get-task-details", { task_id: task.task_id }),
-              axios.post("http://localhost:5001/api/employer-get-payment-details", { payment_id: task.payment_id }),
+              axios.post("/api/employer-get-task-details", { task_id: task.task_id }),
+              axios.post("/api/employer-get-payment-details", { payment_id: task.payment_id }),
             ]);
 
             return {
@@ -55,7 +55,7 @@ function Warehouse_HomePage() {
 
     const fetchRating = async () => {
       try {
-        const response = await axios.post("http://localhost:5001/api/get-rating", { user_id: userID });
+        const response = await axios.post("/api/get-rating", { user_id: userID });
         console.log(response);
         if (response.status === 200) {
           setRating(parseFloat(response.data.averageRating)); // Set the rating from the response

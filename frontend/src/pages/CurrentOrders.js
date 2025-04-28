@@ -30,7 +30,7 @@ const EmployerOrders = ({ enrichedOrders }) => {
 
   const completeTask = async (task_id) => {
     try {
-      axios.put("http://localhost:5001/api/complete-task", { task_id, status: 'completed' })
+      axios.put("/api/complete-task", { task_id, status: 'completed' })
         .then((response) => {
           console.log(response);
           dispatch(clearView());
@@ -52,7 +52,7 @@ const EmployerOrders = ({ enrichedOrders }) => {
         fromVehicleStatus: "In Use",
         toVehicleStatus: "Active"
       };
-      const response = await axios.post("http://localhost:5001/api/users/update-employee-status", userStatus);
+      const response = await axios.post("/api/users/update-employee-status", userStatus);
 
       if (response.status === 200) {
         console.log("User status updated successfully:", response.data);

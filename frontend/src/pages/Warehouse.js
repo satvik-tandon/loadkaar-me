@@ -26,12 +26,12 @@ function WarehousePage() {
   const fetchAdditionalDetails = async (warehouseIds) => {
     try {
       // Fetch price details for all warehouses
-      const priceResponse = await axios.post("http://localhost:5001/api/warehouse/prices", {
+      const priceResponse = await axios.post("/api/warehouse/prices", {
         warehouse_ids: warehouseIds,
       });
 
       // Fetch address and location details for all warehouses
-      const locationResponse = await axios.post("http://localhost:5001/api/warehouse/location", {
+      const locationResponse = await axios.post("/api/warehouse/location", {
         warehouse_ids: warehouseIds,
       });
 
@@ -77,7 +77,7 @@ function WarehousePage() {
   const fetchWarehouses = async () => {
     try {
       const warehouseDetails = { user_id: userID };
-      const response = await axios.post("http://localhost:5001/api/fetchWarehouse", warehouseDetails);
+      const response = await axios.post("/api/fetchWarehouse", warehouseDetails);
       if (response.data.message === "No warehouse found for this user") {
         setWarehouses([]);
       } else {
@@ -133,16 +133,16 @@ function WarehousePage() {
     try {
       if (editingId) {
         // Update warehouse
-        await axios.put("http://localhost:5001/api/updateWarehouse", {...warehouseData, warehouse_id: editingId});
-        await axios.put("http://localhost:5001/api/updateWarehousePricing", {...warehousePricingData, warehouse_id: editingId});
-        await axios.put("http://localhost:5001/api/updateWarehouseLocation", {...warehouseLocationData, warehouse_id: editingId});
+        await axios.put("/api/updateWarehouse", {...warehouseData, warehouse_id: editingId});
+        await axios.put("/api/updateWarehousePricing", {...warehousePricingData, warehouse_id: editingId});
+        await axios.put("/api/updateWarehouseLocation", {...warehouseLocationData, warehouse_id: editingId});
         console.log("Warehouse updated.");
       } else {
         // Add warehouse
-        const warehouseResponse = await axios.post("http://localhost:5001/api/addWarehouse", {...warehouseData, user_id: userID});
+        const warehouseResponse = await axios.post("/api/addWarehouse", {...warehouseData, user_id: userID});
         const warehouseId = warehouseResponse.data.warehouse_id;
-        await axios.post("http://localhost:5001/api/addWarehousePricing", {...warehousePricingData, warehouse_id: warehouseId});
-        await axios.post("http://localhost:5001/api/addWarehouseLocation", {...warehouseLocationData, warehouse_id: warehouseId});
+        await axios.post("/api/addWarehousePricing", {...warehousePricingData, warehouse_id: warehouseId});
+        await axios.post("/api/addWarehouseLocation", {...warehouseLocationData, warehouse_id: warehouseId});
         console.log("Warehouse added.");
       }
       setFormData({
@@ -166,7 +166,7 @@ function WarehousePage() {
   const handleDelete = async (warehouse_id) => {
     const warehouseId = { warehouse_id: warehouse_id };
     try {
-      await axios.post("http://localhost:5001/api/warehouse/delete", warehouseId);
+      await axios.post("/api/warehouse/delete", warehouseId);
       console.log("Warehouse deleted.");
       fetchWarehouses();
     } catch (error) {
